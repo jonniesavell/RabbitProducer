@@ -6,7 +6,7 @@ namespace MessagingGateway.Application;
 
 public class OpenMessageProducer : IMessageProducer
 {
-    private IChannel _channel;
+    private readonly IChannel _channel;
 
     public OpenMessageProducer(IChannel channel)
     {

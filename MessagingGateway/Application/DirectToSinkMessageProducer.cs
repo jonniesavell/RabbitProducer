@@ -6,7 +6,7 @@ namespace MessagingGateway.Application;
 
 public class DirectToSinkMessageProducer : IMessageProducer
 {
-    private IChannel _channel;
+    private readonly IChannel _channel;
 
     public DirectToSinkMessageProducer(IChannel channel)
     {

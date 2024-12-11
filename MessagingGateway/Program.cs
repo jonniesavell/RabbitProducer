@@ -33,6 +33,7 @@ public class Program
                 initializables
             ))
         {
+            // this is part of the initialization that the application must perform.
             await factory.InitializeAsync();
 
             // we would normally create the rest of the application and allow the components within the

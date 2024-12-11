@@ -6,7 +6,7 @@ namespace MessagingGateway.Application;
 
 public class DirectToHoleMessageProducer : IMessageProducer
 {
-    private IChannel _channel;
+    private readonly IChannel _channel;
 
     public DirectToHoleMessageProducer(IChannel channel)
     {
