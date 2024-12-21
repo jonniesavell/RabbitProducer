@@ -66,16 +66,15 @@ public class MessageProducerFactory : IDisposable, IAsyncDisposable
         }
         else
         {
-            IMessageProducer? messageProducer;
-            bool present = _messageProducers.TryGetValue(key, out messageProducer);
+            bool present = _messageProducers.TryGetValue(key, out IMessageProducer? messageProducer);
 
-            if (!present)
+            if (present)
             {
-                throw new ArgumentException("no message producer associated with the given key");
+                return messageProducer!;
             }
             else
             {
-                return messageProducer!;
+                throw new ArgumentException("no message producer associated with the given key");
             }
         }
     }
